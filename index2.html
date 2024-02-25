@@ -10,7 +10,7 @@
 				padding: 3px;
 			}
 			
-			main {
+			#main {
 				margin: 2px;
 			}
 		</style>
@@ -25,7 +25,7 @@
 			width="300"
 			height="215">
 		<p id="caption">
-			<b>Sudah siap untuk memecahkan teka-teki permainan tersebut?<b></b>
+			<b>Sudah siap untuk memecahkan teka-teki permainan tersebut?</b>
 		</p>
 		<div class="button-group">
 			<div class="button">
@@ -57,11 +57,18 @@
 	</div>
 
 	<script>
-		const dicoding = document.getElementById("dicodingLink");
-		const google = document.getElementById("googleLink");
+		const dicoding = document.getElementById('dicodingLink');
+		const google = document.getElementById('googleLink');
+		const buttons = document.getElementsByClassName('button');
 		
-		dicoding.innerHTML = 'Belajar Programming di Dicoding'
-		google.innerHTML = 'Mencari sesuatu di Google'
+		dicoding.innerHTML = '<i>Belajar Programming di Dicoding</i>';
+		google.innerHTML = '<i>Mencari Sesuatu di Google</i>';
+
+		// looping through button
+		for (const button of buttons) {
+			console.log(button.children[0]);
+			button.children[0].style.borderRadius = '6px';
+		}
 	</script>
 	</body>
 </html>
